@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # This file contains setup and helper functions used by experiments A through E.
 # Each experiment loads this file before starting its server and clients.
 

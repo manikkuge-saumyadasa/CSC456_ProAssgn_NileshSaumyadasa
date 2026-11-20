@@ -80,7 +80,3 @@ make experiments
 - `exp_e_starvation.sh`: optional demonstration of reader preference delaying a writer.
 
 Each experiment writes its server log under `experiments/logs/`. `PORT` and `DELAY` can be set to override the defaults, for example `PORT=5200 DELAY=1000 make experiments`.
-
-## Assignment submission checklist
-
-The source code, Makefile, and experiment scripts are present. The assignment also requires a report PDF of at most five pages and a named ZIP submission; neither is included in this project folder yet. The assignment asks you to choose and read the manual for a project management tool; this folder is not a Git working tree, so that requirement is not demonstrated here.

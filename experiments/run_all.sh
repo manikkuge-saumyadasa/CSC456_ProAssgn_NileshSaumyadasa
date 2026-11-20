@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Run the concurrency demonstrations in order; each script starts and stops its own server.
 # Logs are saved under experiments/logs/.
 cd "$(dirname "${BASH_SOURCE[0]}")"
