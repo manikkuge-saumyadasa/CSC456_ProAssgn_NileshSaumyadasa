@@ -20,4 +20,4 @@ runall:
 
 # Remove Python cache and generated Part 1 output files.
 clean:
-	rm -rf src/__pycache__ tests/part1_output.txt tests/part1_server.log experiments/logs
+	rm -rf src/__pycache__ tests/part1_output.txt tests/part1_server.log experiments/logs export

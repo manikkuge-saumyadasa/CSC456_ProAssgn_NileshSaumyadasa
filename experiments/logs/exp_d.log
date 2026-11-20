@@ -1,0 +1,16 @@
+serving /private/var/folders/s6/542yssc51pz47cqkdj8zn9zw0000gn/T/tmp.l7JjdN51pr on 0.0.0.0:5100 (delay=2000 ms)
+22:36:14.174 CONNECT client=1 cmd=- path=127.0.0.1:53068
+22:36:14.175 WAIT    client=1 cmd=read path=/f.txt
+22:36:14.175 GET     client=1 cmd=read path=/f.txt
+22:36:14.287 CONNECT client=2 cmd=- path=127.0.0.1:53069
+22:36:14.287 WAIT    client=2 cmd=read path=/f.txt
+22:36:14.287 GET     client=2 cmd=read path=/f.txt
+22:36:14.390 CONNECT client=3 cmd=- path=127.0.0.1:53070
+22:36:14.896 WAIT    client=3 cmd=write path=/f.txt
+22:36:16.178 RELEASE client=1 cmd=read path=/f.txt
+22:36:16.179 DISCONNECT client=1 cmd=- path=127.0.0.1:53068
+22:36:16.289 RELEASE client=2 cmd=read path=/f.txt
+22:36:16.289 GET     client=3 cmd=write path=/f.txt
+22:36:16.290 DISCONNECT client=2 cmd=- path=127.0.0.1:53069
+22:36:18.295 RELEASE client=3 cmd=write path=/f.txt
+22:36:18.296 DISCONNECT client=3 cmd=- path=127.0.0.1:53070
