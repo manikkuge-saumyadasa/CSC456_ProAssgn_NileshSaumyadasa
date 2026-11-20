@@ -1,0 +1,52 @@
+# Part 1 walkthrough: command examples, error handling, and export-root protection.
+# Each heading is a comment; the client skips it and runs the commands below it.
+# Create a directory, then repeat it to check the already-exists error.
+mkdir docs
+mkdir docs
+# Create an empty file, then repeat it to check duplicate-path handling.
+create docs/a.txt
+create docs/a.txt
+# Verify write preserves spaces in the text and read returns the stored contents.
+write docs/a.txt hello   multi space
+read docs/a.txt
+# These reads should fail because one path is a directory and one does not exist.
+read docs
+read nope.txt
+# List the export root and a subdirectory, then try a missing directory.
+ls
+ls docs
+ls nope
+# Change this client's working directory and display the new virtual path.
+cd docs
+pwd
+# Both paths try to go above the export root and must be rejected.
+read ../../etc/passwd
+cd /..
+# Reject cd into a file, then copy a valid file.
+cd a.txt
+cp a.txt b.txt
+# Copying onto an existing destination must fail; moving into / should succeed.
+cp a.txt b.txt
+mv b.txt /
+# The source was moved, so moving it again fails; list / to inspect the result.
+mv b.txt /
+ls /
+# Reject moving a directory into one of its own subdirectories.
+mkdir sub
+mv /docs /docs/sub
+# Reject copying a directory into itself; then copy it to a separate location.
+cp /docs /docs/sub
+cp /docs /docs2
+# Inspect the copy, reject removing it while non-empty, then remove it recursively.
+ls /
+rm /docs2
+rm -r /docs2
+# Check missing-path, protected-root, and unknown-command errors.
+rm nope
+rm /
+bogus
+# Return to the root, rename the directory, list the final layout, and disconnect.
+cd /
+mv docs renamed
+ls
+quit
